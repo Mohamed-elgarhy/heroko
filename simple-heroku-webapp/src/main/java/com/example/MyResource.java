@@ -43,7 +43,13 @@ public class MyResource {
 		jsonObject.put("message", "api");
 		String res = jsonObject.toString();
 		return Response.status(200).entity(res).build();*/
-    	return Response.status(200).entity("api").build();
+    	User user = new User();
+		user.setUsername("mkyong");
+		user.setPassword("password");
+		user.setPin(123456);
+
+		//return user;
+    	return Response.status(200).entity(user).build();
     }
     
     public static double FibonacciRecursive(int n) {
