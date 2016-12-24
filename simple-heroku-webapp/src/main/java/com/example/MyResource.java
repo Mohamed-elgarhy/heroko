@@ -173,11 +173,11 @@ public class MyResource {
 	// static int fib[] =
 
 	
-	
+	// "response"
 	@GET
 	@Produces("application/json")
 	@Path("ReverseWords")
-	public String reverseSentense(@Context UriInfo info) {
+	public Response reverseSentense(@Context UriInfo info) {
 
 		/*
 		 * String sentence = info.getQueryParameters().getFirst("sentence");
@@ -250,7 +250,13 @@ public class MyResource {
 		 * result.append(builder); result.append(" "); }
 		 */
 
-		return sentenceBuilder.toString();
+		JSONObject jsonObject = new JSONObject();
+		jsonObject.put("response", sentenceBuilder.toString());
+		String res = jsonObject.toString();
+		
+		return Response.status(200).entity(res).build();
+		
+		//return sentenceBuilder.toString();
 	}
 
 	// static int fib[] =
