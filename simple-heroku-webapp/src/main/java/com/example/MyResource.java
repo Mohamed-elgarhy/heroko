@@ -54,7 +54,7 @@ public class MyResource {
 	 * 
 	 * @return an instance of String
 	 */
-	@GET
+	
 	@POST
 	@Path("Token")
 	@Produces("application/json")
@@ -64,7 +64,7 @@ public class MyResource {
 		return Response.status(200).entity(result).build();
 	}
 
-	@GET
+	
 	@POST
 	@Produces("application/json")
 	@Path("ReverseWords")
@@ -157,7 +157,7 @@ public class MyResource {
 		return a;
 	}
 
-	@GET
+	
 	@POST
 	@Path("Fibonacci")
 	@Produces("application/json")
@@ -193,7 +193,7 @@ public class MyResource {
 
 	}
 
-	@GET
+	
 	@POST
 	@Path("TriangleType")
 	@Produces("application/json")
@@ -252,7 +252,7 @@ public class MyResource {
 		// return "";
 	}
 
-	@POST
+	/*@POST
 	@Path("{f}")
 	@Produces("application/json")
 	public Response jsonExample1(@PathParam("f") int f) throws JSONException {
@@ -263,5 +263,5 @@ public class MyResource {
 		return Response.status(200).entity(result).build();
 
 		// return "OK";
-	}
+	}*/
 }
