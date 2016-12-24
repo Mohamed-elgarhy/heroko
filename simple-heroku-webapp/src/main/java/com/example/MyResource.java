@@ -55,6 +55,7 @@ public class MyResource {
 	 * @return an instance of String
 	 */
 	@GET
+	@POST
 	@Path("Token")
 	@Produces("application/json")
 	public Response getToken() {
@@ -64,6 +65,7 @@ public class MyResource {
 	}
 
 	@GET
+	@POST
 	@Produces("application/json")
 	@Path("ReverseWords")
 	public String reverseSentense(@Context UriInfo info) {
@@ -156,6 +158,7 @@ public class MyResource {
 	}
 
 	@GET
+	@POST
 	@Path("Fibonacci")
 	@Produces("application/json")
 	public Response fibonacciSeries(@QueryParam("n") String n) {
@@ -191,6 +194,7 @@ public class MyResource {
 	}
 
 	@GET
+	@POST
 	@Path("TriangleType")
 	@Produces("application/json")
 	public Response calculateTriangle(@QueryParam("a") String a,
