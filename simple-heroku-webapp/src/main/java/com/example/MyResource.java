@@ -37,7 +37,7 @@ public class MyResource {
     }
     
     @POST
-    @Produces(MediaType.APPLICATION_XML)
+    @Produces(MediaType.TEXT_XML)
     public Response getPost() {
     	/*JSONObject jsonObject = new JSONObject();
 		jsonObject.put("message", "api");
