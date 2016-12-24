@@ -37,9 +37,13 @@ public class MyResource {
     }
     
     @POST
-    @Produces(MediaType.TEXT_PLAIN)
-    public String getPost() {
-        return "Hello, Heroku!";
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getPost() {
+    	JSONObject jsonObject = new JSONObject();
+		jsonObject.put("message", "api");
+		String res = jsonObject.toString();
+		return Response.status(200).entity(res).build();
+
     }
     
     public static double FibonacciRecursive(int n) {
