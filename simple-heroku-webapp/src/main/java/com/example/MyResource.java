@@ -37,13 +37,13 @@ public class MyResource {
     }
     
     @POST
-    @Produces(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_XML)
     public Response getPost() {
-    	JSONObject jsonObject = new JSONObject();
+    	/*JSONObject jsonObject = new JSONObject();
 		jsonObject.put("message", "api");
 		String res = jsonObject.toString();
-		return Response.status(200).entity(res).build();
-
+		return Response.status(200).entity(res).build();*/
+    	return Response.status(200).entity("api").build();
     }
     
     public static double FibonacciRecursive(int n) {
