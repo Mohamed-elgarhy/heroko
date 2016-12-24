@@ -279,7 +279,7 @@ public class MyResource {
 		 * n); String result = jsonObject.toString(); return
 		 * Response.status(200).entity(result).build();
 		 */
-		String result = "no content";
+		String result = "\"no content\"";
 		// return "OK";
 
 		int num = 0;
