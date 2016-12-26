@@ -200,6 +200,12 @@ public class MyResource {
 			a_side = Integer.parseInt(a);
 			b_side = Integer.parseInt(b);
 			c_side = Integer.parseInt(c);
+			
+			if (!validateInputs(a_side,b_side,c_side))
+			{
+				return Response.status(200).entity("\"" + result + "\"").build(); 
+			}
+			
 		} catch (NumberFormatException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -219,6 +225,18 @@ public class MyResource {
 					.build();
 		}
 
+	}
+
+	private boolean validateInputs(int a, int b, int c) {
+		boolean result = true ;
+		
+		if (a < 1 || b < 1 || c < 1)
+		{
+			result = false;
+		}
+		
+		return result;
+		
 	}
 
 	private String calculateTriangle(int a, int b, int c) throws Exception {
