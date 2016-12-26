@@ -7,7 +7,6 @@ import java.util.List;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
@@ -15,7 +14,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
@@ -24,35 +22,32 @@ import org.json.JSONObject;
 @Path("api")
 public class MyResource {
 
-    /**
-     * Method handling HTTP GET requests. The returned object will be sent
-     * to the client as "text/plain" media type.
-     *
-     * @return String that will be returned as a text/plain response.
-     */
-    @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    public String getIt() {
-        return "Hello, Heroku!";
-    }
-    
-   /* @POST
-    @Produces(MediaType.TEXT_XML)
-    public Response getPost() {
-    	JSONObject jsonObject = new JSONObject();
-		jsonObject.put("message", "api");
-		String res = jsonObject.toString();
-		return Response.status(200).entity(res).build();
-    	User user = new User();
-		user.setUsername("mkyong");
-		user.setPassword("password");
-		user.setPin(123456);
+	/**
+	 * Method handling HTTP GET requests. The returned object will be sent to
+	 * the client as "text/plain" media type.
+	 * 
+	 * @return String that will be returned as a text/plain response.
+	 */
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	public String getIt() {
+		return "Hello, Heroku!";
+	}
 
-		//return user;
-    	return Response.status(200).entity(user).build();
-    }*/
-    
-    public static double FibonacciRecursive(int n) {
+	/*
+	 * @POST
+	 * 
+	 * @Produces(MediaType.TEXT_XML) public Response getPost() { JSONObject
+	 * jsonObject = new JSONObject(); jsonObject.put("message", "api"); String
+	 * res = jsonObject.toString(); return
+	 * Response.status(200).entity(res).build(); User user = new User();
+	 * user.setUsername("mkyong"); user.setPassword("password");
+	 * user.setPin(123456);
+	 * 
+	 * //return user; return Response.status(200).entity(user).build(); }
+	 */
+
+	public static double FibonacciRecursive(int n) {
 		if (n == 0)
 			return 0;
 		if (n == 1)
@@ -70,7 +65,7 @@ public class MyResource {
 	 * 
 	 * @return an instance of String
 	 */
-	
+
 	@GET
 	@Path("Token")
 	@Produces("application/json")
@@ -79,8 +74,7 @@ public class MyResource {
 
 		return Response.status(200).entity(result).build();
 	}
-	
-	
+
 	@GET
 	@Path("token")
 	@Produces("application/json")
@@ -89,7 +83,7 @@ public class MyResource {
 
 		return Response.status(200).entity(result).build();
 	}
-	
+
 	@POST
 	@Path("Token")
 	@Produces("application/json")
@@ -99,121 +93,10 @@ public class MyResource {
 		return Response.status(200).entity(result).build();
 	}
 
-	
-	
-	/*@POST
-	@Produces("application/json")
-	@Path("ReverseWords")
-	public String reverseSentensePOST(@Context UriInfo info) {
-
-		
-		 * String sentence = info.getQueryParameters().getFirst("sentence");
-		 * StringBuilder sentenceBuilder = new StringBuilder(); StringBuilder
-		 * wordBuilder = new StringBuilder(); char [] charSentence =
-		 * sentence.toCharArray(); boolean newWordFlag = true; for (int i = 0; i
-		 * < charSentence.length; i++) {
-		 * 
-		 * if (charSentence[i] == ' ' ) { if (newWordFlag) { newWordFlag =
-		 * false; wordBuilder.reverse(); sentenceBuilder.append(wordBuilder); }
-		 * 
-		 * 
-		 * System.out.println("space"); sentenceBuilder.append(charSentence[i]);
-		 * continue; } else { if (!newWordFlag) { newWordFlag = true;
-		 * wordBuilder = new StringBuilder(); }
-		 * 
-		 * 
-		 * System.out.println(charSentence[i]);
-		 * wordBuilder.append(charSentence[i]);
-		 * 
-		 * }
-		 * 
-		 * 
-		 * 
-		 * }
-		 
-
-		String sentence = info.getQueryParameters().getFirst("sentence");
-		StringBuilder sentenceBuilder = new StringBuilder();
-		StringBuilder wordBuilder = new StringBuilder();
-		char[] charSentence = sentence.toCharArray();
-		List<StringBuilder> result = new ArrayList<StringBuilder>();
-		boolean newWordFlag = true;
-		for (int i = 0; i < charSentence.length; i++) {
-
-			if (charSentence[i] == ' ') {
-				if (newWordFlag) {
-					newWordFlag = false;
-					result.add(wordBuilder);
-					wordBuilder = new StringBuilder();
-				}
-
-				// continue;
-			} else {
-				if (!newWordFlag) {
-					newWordFlag = true;
-					result.add(wordBuilder);
-					wordBuilder = new StringBuilder();
-				}
-			}
-
-			wordBuilder.append(charSentence[i]);
-
-		}
-		result.add(wordBuilder);
-
-		for (Iterator<StringBuilder> iterator = result.iterator(); iterator
-				.hasNext();) {
-			StringBuilder stringBuilder = iterator.next();
-			// System.out.println(stringBuilder);
-			sentenceBuilder.append(stringBuilder.reverse());
-
-		}
-
-		
-		 * String[] words = sentence.split("\\s+"); StringBuilder builder ;
-		 * StringBuilder result = new StringBuilder(); for (int i = 0; i <
-		 * words.length; i++) { builder = new StringBuilder(words[i]);
-		 * builder.reverse(); System.out.println(builder);
-		 * result.append(builder); result.append(" "); }
-		 
-
-		return sentenceBuilder.toString();
-	}*/
-
-	// static int fib[] =
-
-	
-	// "response"
 	@GET
 	@Produces("application/json")
-	@Path("reverseWords")
+	@Path("reversewords")
 	public Response reverseSentense(@Context UriInfo info) {
-
-		/*
-		 * String sentence = info.getQueryParameters().getFirst("sentence");
-		 * StringBuilder sentenceBuilder = new StringBuilder(); StringBuilder
-		 * wordBuilder = new StringBuilder(); char [] charSentence =
-		 * sentence.toCharArray(); boolean newWordFlag = true; for (int i = 0; i
-		 * < charSentence.length; i++) {
-		 * 
-		 * if (charSentence[i] == ' ' ) { if (newWordFlag) { newWordFlag =
-		 * false; wordBuilder.reverse(); sentenceBuilder.append(wordBuilder); }
-		 * 
-		 * 
-		 * System.out.println("space"); sentenceBuilder.append(charSentence[i]);
-		 * continue; } else { if (!newWordFlag) { newWordFlag = true;
-		 * wordBuilder = new StringBuilder(); }
-		 * 
-		 * 
-		 * System.out.println(charSentence[i]);
-		 * wordBuilder.append(charSentence[i]);
-		 * 
-		 * }
-		 * 
-		 * 
-		 * 
-		 * }
-		 */
 
 		String sentence = info.getQueryParameters().getFirst("sentence");
 		StringBuilder sentenceBuilder = new StringBuilder();
@@ -230,7 +113,6 @@ public class MyResource {
 					wordBuilder = new StringBuilder();
 				}
 
-				// continue;
 			} else {
 				if (!newWordFlag) {
 					newWordFlag = true;
@@ -252,20 +134,10 @@ public class MyResource {
 
 		}
 
-		/*
-		 * String[] words = sentence.split("\\s+"); StringBuilder builder ;
-		 * StringBuilder result = new StringBuilder(); for (int i = 0; i <
-		 * words.length; i++) { builder = new StringBuilder(words[i]);
-		 * builder.reverse(); System.out.println(builder);
-		 * result.append(builder); result.append(" "); }
-		 */
-		
-		return Response.status(200).entity("\""+sentenceBuilder.toString()+"\"").build();
-		
-		//return sentenceBuilder.toString();
-	}
+		return Response.status(200)
+				.entity("\"" + sentenceBuilder.toString() + "\"").build();
 
-	// static int fib[] =
+	}
 
 	public long fibonacciDynamicProgramming(int x) {
 		long a = 0l;
@@ -278,19 +150,12 @@ public class MyResource {
 		return a;
 	}
 
-	
 	@GET
 	@Path("fibonacci")
 	@Produces("application/json")
 	public Response fibonacciSeries(@QueryParam("n") String n) {
-		// TODO Auto-generated method stub
-		/*
-		 * JSONObject jsonObject = new JSONObject(); jsonObject.put("f value",
-		 * n); String result = jsonObject.toString(); return
-		 * Response.status(200).entity(result).build();
-		 */
+
 		String result = "\"no content\"";
-		// return "OK";
 
 		int num = 0;
 		try {
@@ -313,43 +178,7 @@ public class MyResource {
 		}
 
 	}
-	
-	/*@POST
-	@Path("Fibonacci")
-	@Produces("application/json")
-	public Response fibonacciSeriesPOST(@QueryParam("n") String n) {
-		// TODO Auto-generated method stub
-		
-		 * JSONObject jsonObject = new JSONObject(); jsonObject.put("f value",
-		 * n); String result = jsonObject.toString(); return
-		 * Response.status(200).entity(result).build();
-		 
-		String result = "no content";
-		// return "OK";
 
-		int num = 0;
-		try {
-			num = Integer.parseInt(n);
-		} catch (NumberFormatException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			JSONObject jsonObject = new JSONObject();
-			jsonObject.put("message", "The request is invalid.");
-			String res = jsonObject.toString();
-			return Response.status(400).entity(res).build();
-		}
-
-		if (num <= 92) {
-			result = fibonacciDynamicProgramming(num) + "";
-			return Response.status(200).entity(result).build();
-			// return result+"";
-		} else {
-			return Response.status(400).entity(result).build();
-		}
-
-	}
-*/
-	
 	@GET
 	@Path("triangleType")
 	@Produces("application/json")
@@ -382,55 +211,15 @@ public class MyResource {
 
 		try {
 			result = calculateTriangle(a_side, b_side, c_side);
-			return Response.status(200).entity("\""+result+"\"").build();
+			return Response.status(200).entity("\"" + result + "\"").build();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return Response.status(400).entity("\""+e.getMessage()+"\"").build();
+			return Response.status(400).entity("\"" + e.getMessage() + "\"")
+					.build();
 		}
 
 	}
-	
-	/*@POST
-	@Path("TriangleType")
-	@Produces("application/json")
-	public Response calculateTrianglePOST(@QueryParam("a") String a,
-			@QueryParam("b") String b, @QueryParam("c") String c) {
-		// TODO Auto-generated method stub
-		
-		 * JSONObject jsonObject = new JSONObject(); jsonObject.put("f value",
-		 * n); String result = jsonObject.toString(); return
-		 * Response.status(200).entity(result).build();
-		 
-		String result = "Error";
-		// return "OK";
-
-		int a_side = 0;
-		int b_side = 0;
-		int c_side = 0;
-		try {
-			a_side = Integer.parseInt(a);
-			b_side = Integer.parseInt(b);
-			c_side = Integer.parseInt(c);
-		} catch (NumberFormatException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			JSONObject jsonObject = new JSONObject();
-			jsonObject.put("message", "The request is invalid.");
-			String res = jsonObject.toString();
-			return Response.status(400).entity(res).build();
-		}
-
-		try {
-			result = calculateTriangle(a_side, b_side, c_side);
-			return Response.status(200).entity(result).build();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return Response.status(400).entity(result).build();
-		}
-
-	}*/
 
 	private String calculateTriangle(int a, int b, int c) throws Exception {
 
@@ -445,20 +234,6 @@ public class MyResource {
 		} else {
 			return "Scalene";
 		}
-
-		// return "";
 	}
 
-	/*@POST
-	@Path("{f}")
-	@Produces("application/json")
-	public Response jsonExample1(@PathParam("f") int f) throws JSONException {
-		// TODO Auto-generated method stub
-		JSONObject jsonObject = new JSONObject();
-		jsonObject.put("f value", f + 1);
-		String result = jsonObject.toString();
-		return Response.status(200).entity(result).build();
-
-		// return "OK";
-	}*/
 }
