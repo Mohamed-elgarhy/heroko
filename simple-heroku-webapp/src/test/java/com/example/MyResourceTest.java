@@ -25,5 +25,9 @@ public class MyResourceTest extends JerseyTest {
         final String responseMsg = target().path("api").request().get(String.class);
 
         assertEquals("Hello, Heroku!", responseMsg);
+        
+        /*final String responseMsg1 = target().path("api/Token").request().get(String.class);
+
+        assertEquals("d305d55d-dee8-44ff-837f-b080a3f6a4b0", responseMsg1);*/
     }
 }
