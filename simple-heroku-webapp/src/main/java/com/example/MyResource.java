@@ -80,6 +80,16 @@ public class MyResource {
 		return Response.status(200).entity(result).build();
 	}
 	
+	
+	@GET
+	@Path("token")
+	@Produces("application/json")
+	public Response getToken1() {
+		String result = "\"d305d55d-dee8-44ff-837f-b080a3f6a4b0\"";
+
+		return Response.status(200).entity(result).build();
+	}
+	
 	@POST
 	@Path("Token")
 	@Produces("application/json")
