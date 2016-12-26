@@ -186,7 +186,7 @@ public class MyResource {
 	// "response"
 	@GET
 	@Produces("application/json")
-	@Path("ReverseWords")
+	@Path("reverseWords")
 	public Response reverseSentense(@Context UriInfo info) {
 
 		/*
@@ -280,7 +280,7 @@ public class MyResource {
 
 	
 	@GET
-	@Path("Fibonacci")
+	@Path("fibonacci")
 	@Produces("application/json")
 	public Response fibonacciSeries(@QueryParam("n") String n) {
 		// TODO Auto-generated method stub
@@ -351,7 +351,7 @@ public class MyResource {
 */
 	
 	@GET
-	@Path("TriangleType")
+	@Path("triangleType")
 	@Produces("application/json")
 	public Response calculateTriangle(@QueryParam("a") String a,
 			@QueryParam("b") String b, @QueryParam("c") String c) {
