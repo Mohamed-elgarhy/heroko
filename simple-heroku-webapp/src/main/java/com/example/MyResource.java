@@ -1,5 +1,6 @@
 package com.example;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -141,11 +142,11 @@ public class MyResource {
 
 	}
 
-	public long fibonacciDynamicProgramming(int x) {
-		long a = 0l;
-		long b = 1l;
+	public BigDecimal fibonacciDynamicProgramming(int x) {
+		BigDecimal a = new BigDecimal(0);
+		BigDecimal b = new BigDecimal(1);
 		for (int i = 0; i < x; i++) {
-			long c = a + b;// System.out.println(c);
+			BigDecimal c = a.add(b);// System.out.println(c);
 			a = b;
 			b = c;
 		}
@@ -171,8 +172,8 @@ public class MyResource {
 			return Response.status(200).entity(res).build();
 		}
 
-		if (num <= 92) {
-			result = fibonacciDynamicProgramming(num) + "";
+		if (num <= 92 && num >= -92) {
+			result = fibonacciDynamicProgramming(Math.abs(num)) + "";
 			return Response.status(200).entity(result).build();
 			// return result+"";
 		} else {
