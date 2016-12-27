@@ -178,6 +178,7 @@ public class MyResource {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.err.println("Exception");
+			e.printStackTrace();
 			return Response.status(200).entity("\"" + e.getMessage() + "\"")
 					.build();
 		}
