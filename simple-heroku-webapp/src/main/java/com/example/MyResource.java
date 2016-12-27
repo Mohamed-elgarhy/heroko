@@ -180,10 +180,10 @@ public class MyResource {
 	}
 
 	@GET
-	@Path("triangleType")
+	@Path("triangletype")
 	@Produces("application/json")
 	public Response calculateTriangle(@QueryParam("a") String a,
-			@QueryParam("b") String b, @QueryParam("c") String c) {
+			@QueryParam("b") String b, @QueryParam("c") String c ) {
 		// TODO Auto-generated method stub
 		/*
 		 * JSONObject jsonObject = new JSONObject(); jsonObject.put("f value",
@@ -191,15 +191,16 @@ public class MyResource {
 		 * Response.status(200).entity(result).build();
 		 */
 		String result = "\"Error\"";
-		// return "OK";
+		
+		//System.out.println(Integer.valueOf(a));
 
 		int a_side = 0;
 		int b_side = 0;
 		int c_side = 0;
 		try {
-			a_side = Integer.parseInt(a);
-			b_side = Integer.parseInt(b);
-			c_side = Integer.parseInt(c);
+			a_side = Integer.valueOf(a);
+			b_side = Integer.valueOf(b);
+			c_side = Integer.valueOf(c);
 			
 			if (!validateInputs(a_side,b_side,c_side))
 			{
