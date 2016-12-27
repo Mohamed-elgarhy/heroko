@@ -242,7 +242,7 @@ public class MyResource {
 		
 	}
 
-	private String calculateTriangle(int a, int b, int c) throws Exception {
+	private String calculateTriangle(long a, long b, long c) throws Exception {
 
 		if ((a + b) <= c || (a + c) <= b || (b + c) <= a) {
 			throw new Exception("Error"); // FIXME
