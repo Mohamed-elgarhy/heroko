@@ -190,7 +190,7 @@ public class MyResource {
 		 * n); String result = jsonObject.toString(); return
 		 * Response.status(200).entity(result).build();
 		 */
-		String result = "\"Error\"";
+		String result = "Error";
 		
 		//System.out.println(Integer.valueOf(a));
 
