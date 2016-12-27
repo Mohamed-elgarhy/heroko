@@ -162,7 +162,7 @@ public class MyResource {
 			num = Integer.valueOf(n);
 		} catch (NumberFormatException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.err.println("NumberFormatException");
 			JSONObject jsonObject = new JSONObject();
 			jsonObject.put("message", "The request is invalid.");
 			String res = jsonObject.toString();
@@ -209,7 +209,7 @@ public class MyResource {
 			
 		} catch (NumberFormatException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.err.println("NumberFormatException");
 			JSONObject jsonObject = new JSONObject();
 			jsonObject.put("message", "The request is invalid.");
 			String res = jsonObject.toString();
@@ -221,7 +221,7 @@ public class MyResource {
 			return Response.status(200).entity("\"" + result + "\"").build();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.err.println("Exception");
 			return Response.status(200).entity("\"" + e.getMessage() + "\"")
 					.build();
 		}
