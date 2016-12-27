@@ -114,13 +114,14 @@ public class MyResource {
 				}
 
 			} else {
+				
 				if (!newWordFlag) {
 					newWordFlag = true;
 					result.add(wordBuilder);
 					wordBuilder = new StringBuilder();
 				}
 			}
-
+			
 			wordBuilder.append(charSentence[i]);
 
 		}
@@ -133,9 +134,10 @@ public class MyResource {
 			sentenceBuilder.append(stringBuilder.reverse());
 
 		}
-
+		String reversedSentense = sentenceBuilder.toString(); 
+		reversedSentense.replaceAll("\"", "\\\"");
 		return Response.status(200)
-				.entity("\"" + sentenceBuilder.toString() + "\"").build();
+				.entity("\"" + reversedSentense + "\"").build();
 
 	}
 
@@ -155,7 +157,7 @@ public class MyResource {
 	@Produces("application/json")
 	public Response fibonacciSeries(@QueryParam("n") String n) {
 
-		String result = "\"no content\"";
+		String result = "";
 
 		int num = 0;
 		try {
