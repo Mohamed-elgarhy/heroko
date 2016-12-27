@@ -1,6 +1,5 @@
 package com.readify.test;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -119,10 +118,10 @@ public class MyResource {
 		} catch (NumberFormatException e) {
 			System.err.println("NumberFormatException");
 			e.printStackTrace();
-			JSONObject jsonObject = new JSONObject();
+			/*JSONObject jsonObject = new JSONObject();
 			jsonObject.put("message", "The request is invalid.");
-			String res = jsonObject.toString();
-			return Response.status(200).entity(res).build();
+			String res = jsonObject.toString();*/
+			return Response.status(200).entity(result).build();
 		}
 
 		if (num <= 92 && num >= -92) {

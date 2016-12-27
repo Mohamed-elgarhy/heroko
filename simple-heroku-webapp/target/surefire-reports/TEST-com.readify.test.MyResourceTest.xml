@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="0" name="com.readify.test.MyResourceTest" time="1.919" errors="0" skipped="0">
+<testsuite tests="20" failures="0" name="com.readify.test.MyResourceTest" time="4.513" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files (x86)\Java\jre1.8.0_111\bin"/>
@@ -26,7 +26,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 7"/>
-    <property name="classworlds.conf" value="D:\WorkSpaces\Rectify\.metadata\.plugins\org.eclipse.m2e.core\launches\m2conf7797395100383253282.tmp"/>
+    <property name="classworlds.conf" value="D:\WorkSpaces\Rectify\.metadata\.plugins\org.eclipse.m2e.core\launches\m2conf6706246357097701973.tmp"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="java.library.path" value="C:\Program Files (x86)\Java\jre1.8.0_111\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:/Program Files (x86)/Java/jre1.8.0_111/bin/client;C:/Program Files (x86)/Java/jre1.8.0_111/bin;C:/Program Files (x86)/Java/jre1.8.0_111/lib/i386;C:\ProgramData\Oracle\Java\javapath;D:\oracle\product\10.2.0\client_1\bin;C:\Program Files (x86)\RSA SecurID Token Common;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Enterprise Vault\EVClient\;C:\Orant\bin;C:\Program Files (x86)\Oracle\jre\1.1.7\bin;C:\apache-maven-3.3.1\bin;C:\Program Files (x86)\Skype\Phone\;C:\Program Files (x86)\Heroku\bin;C:\Program Files (x86)\git\cmd;C:\Program Files (x86)\Git\cmd;D:\junoEclipse\eclipse;;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -60,6 +60,24 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
   </properties>
-  <testcase classname="com.readify.test.MyResourceTest" name="testGetToken" time="1.586"/>
-  <testcase classname="com.readify.test.MyResourceTest" name="testGetIt" time="0.187"/>
+  <testcase classname="com.readify.test.MyResourceTest" name="testGetTriangleWithHighestCounts" time="1.529"/>
+  <testcase classname="com.readify.test.MyResourceTest" name="testGetFabForNegative" time="0.192"/>
+  <testcase classname="com.readify.test.MyResourceTest" name="testGetToken" time="0.17"/>
+  <testcase classname="com.readify.test.MyResourceTest" name="testGetRevWordWithSpecialChars" time="0.178"/>
+  <testcase classname="com.readify.test.MyResourceTest" name="testGetIt" time="0.152"/>
+  <testcase classname="com.readify.test.MyResourceTest" name="testGetRevWordEmpty" time="0.158"/>
+  <testcase classname="com.readify.test.MyResourceTest" name="testGetRevSentenceWithMultiSpaces" time="0.149"/>
+  <testcase classname="com.readify.test.MyResourceTest" name="testGetNonDrawableTriangle" time="0.169"/>
+  <testcase classname="com.readify.test.MyResourceTest" name="testGetRevSentence" time="0.142"/>
+  <testcase classname="com.readify.test.MyResourceTest" name="testGetFabForOutOfIntegerRange" time="0.145"/>
+  <testcase classname="com.readify.test.MyResourceTest" name="testGetEquilateralTriangle" time="0.194"/>
+  <testcase classname="com.readify.test.MyResourceTest" name="testGetRevWordPreSpace" time="0.095"/>
+  <testcase classname="com.readify.test.MyResourceTest" name="testGetTriangleWithExceedingLimits" time="0.14"/>
+  <testcase classname="com.readify.test.MyResourceTest" name="testGetFabForOutOfProgramaticRange" time="0.143"/>
+  <testcase classname="com.readify.test.MyResourceTest" name="testGetIsoscelesTriangle" time="0.13"/>
+  <testcase classname="com.readify.test.MyResourceTest" name="testGetFab" time="0.141"/>
+  <testcase classname="com.readify.test.MyResourceTest" name="testGetRevWordPostSpace" time="0.14"/>
+  <testcase classname="com.readify.test.MyResourceTest" name="testGetRevWord" time="0.135"/>
+  <testcase classname="com.readify.test.MyResourceTest" name="testGetScaleneTriangle" time="0.13"/>
+  <testcase classname="com.readify.test.MyResourceTest" name="testGetTriangleWithNegativeValues" time="0.129"/>
 </testsuite>
