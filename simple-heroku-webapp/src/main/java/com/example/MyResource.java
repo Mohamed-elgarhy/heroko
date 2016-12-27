@@ -159,14 +159,14 @@ public class MyResource {
 
 		int num = 0;
 		try {
-			num = Integer.parseInt(n);
+			num = Integer.valueOf(n);
 		} catch (NumberFormatException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			JSONObject jsonObject = new JSONObject();
 			jsonObject.put("message", "The request is invalid.");
 			String res = jsonObject.toString();
-			return Response.status(400).entity(res).build();
+			return Response.status(200).entity(res).build();
 		}
 
 		if (num <= 92) {
@@ -174,7 +174,7 @@ public class MyResource {
 			return Response.status(200).entity(result).build();
 			// return result+"";
 		} else {
-			return Response.status(400).entity(result).build();
+			return Response.status(200).entity(result).build();
 		}
 
 	}
@@ -213,7 +213,7 @@ public class MyResource {
 			JSONObject jsonObject = new JSONObject();
 			jsonObject.put("message", "The request is invalid.");
 			String res = jsonObject.toString();
-			return Response.status(400).entity(res).build();
+			return Response.status(200).entity(res).build();
 		}
 
 		try {
@@ -222,7 +222,7 @@ public class MyResource {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return Response.status(400).entity("\"" + e.getMessage() + "\"")
+			return Response.status(200).entity("\"" + e.getMessage() + "\"")
 					.build();
 		}
 
